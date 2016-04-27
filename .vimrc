@@ -57,27 +57,32 @@ syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
+
 set history=50
 set nobackup
-set nowritebackup
-set noswapfile    
+set noswapfile
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
-
-nmap <F6> :NERDTree<CR>
-nmap <F5> :Tlist<CR>
-
 set incsearch     " do incremental searching
-set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
+set ts=2
+set shiftwidth=2
+set nu
+set smartindent
+set autoindent
+
+nmap <F5> :NERDTree<CR>
+nmap <F6> :Tlist<CR>
+nmap <F7> :ConqueTermSplit bash<CR>
 
 " vim colorscheme setting
 colorscheme railscasts
 
 " ConqueTerm setting
-let g:ConqueTerm_PyVersion = 2
+let python_version_2 = 1
+let g:ConqueTerm_PyVersion = 3.5
 let g:ConqueTerm_FastMode = 0
 let g:ConqueTerm_Color = 1
 let g:ConqueTerm_SessionSupport = 0
@@ -86,6 +91,9 @@ let g:ConqueTerm_InsertOnEnter = 0
 let g:ConqueTerm_CloseOnEnd = 1
 let g:ConqueTerm_EscKey = '<Esc>'
 let g:ConqueTerm_ToggleKey = '<F9>'
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " syntastic Recommended setting
 set statusline+=%#warningmsg#
@@ -97,7 +105,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_ruby= 1
-" 
+"
 " taglist setting
 let Tlist_Use_Right_Window = 1
 "

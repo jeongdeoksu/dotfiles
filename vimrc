@@ -57,25 +57,25 @@ syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
+
 set history=50
 set nobackup
-set nowritebackup
 set noswapfile
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
-
-nmap <F5> :Tlist<CR>
-nmap <F6> :NERDTree<CR>
-nmap <F7> :ConqueTermSplit bash<CR>
-
 set incsearch     " do incremental searching
-set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
 set ts=2
-set hlsearch    " search highlight
-set paste               " Off -> set nopaste
+set shiftwidth=2
+set nu
+set smartindent
+set autoindent
+
+nmap <F5> :NERDTree<CR>
+nmap <F6> :Tlist<CR>
+nmap <F7> :ConqueTermSplit bash<CR>
 
 " vim colorscheme setting
 colorscheme railscasts
@@ -90,6 +90,11 @@ let g:ConqueTerm_InsertOnEnter = 0
 let g:ConqueTerm_CloseOnEnd = 1
 let g:ConqueTerm_EscKey = '<Esc>'
 let g:ConqueTerm_ToggleKey = '<F9>'
+
+" NERDTree setting
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " syntastic Recommended setting
 set statusline+=%#warningmsg#

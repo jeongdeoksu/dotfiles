@@ -106,6 +106,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_ruby= 1
+" bootstrap scss checker error 조치
+let g:syntastic_scss_checkers=['']
 "
 " taglist setting
 let Tlist_Use_Right_Window = 1
